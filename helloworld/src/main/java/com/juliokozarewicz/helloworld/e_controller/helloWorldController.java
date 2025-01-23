@@ -1,20 +1,19 @@
 package com.juliokozarewicz.helloworld.e_controller;
 
-import com.juliokozarewicz.helloworld.HelloworldApplication;
 import com.juliokozarewicz.helloworld.d_services.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Map;
 
 @RestController
-@RequestMapping(HelloworldApplication.BASE_URL_SERVICE)
+@RequestMapping()
 class HelloWorldController {
 
     @Autowired
     private HelloWorldService helloWorldService;
 
-    @GetMapping("/helloworld")
+    @GetMapping("${BASE_URL_HELLOWORLD:default}/helloworld")
     public Map<String, Object> handle(
         @RequestParam(
             value = "message", defaultValue = "Hello World!"
