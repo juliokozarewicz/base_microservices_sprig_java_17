@@ -21,7 +21,8 @@ class HelloWorldController {
         ) String message,
 
         @RequestHeader(
-        value = "Accept-Language", defaultValue = "en")
+            value = "Accept-Language", defaultValue = "en"
+        )
         String language
     ) {
 
