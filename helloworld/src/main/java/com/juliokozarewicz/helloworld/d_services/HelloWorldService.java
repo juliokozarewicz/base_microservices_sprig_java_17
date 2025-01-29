@@ -8,11 +8,18 @@ import java.util.Map;
 import org.springframework.context.MessageSource;
 import java.util.Locale;
 
+// logger
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Service
 public class HelloWorldService {
 
     private final MessageSource messageSource;
-
+    private static final Logger logger = LoggerFactory.getLogger(
+        HelloWorldService.class
+    );
+''
     public HelloWorldService(MessageSource messageSource) {
         this.messageSource = messageSource;
     }
