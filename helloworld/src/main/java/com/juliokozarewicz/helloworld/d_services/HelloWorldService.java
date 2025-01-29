@@ -16,10 +16,11 @@ import org.slf4j.LoggerFactory;
 public class HelloWorldService {
 
     private final MessageSource messageSource;
+
     private static final Logger logger = LoggerFactory.getLogger(
         HelloWorldService.class
     );
-''
+
     public HelloWorldService(MessageSource messageSource) {
         this.messageSource = messageSource;
     }
