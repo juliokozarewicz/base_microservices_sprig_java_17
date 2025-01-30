@@ -18,15 +18,11 @@ class HelloWorldController {
 
         @RequestParam(
             value = "message", defaultValue = "Hello World!"
-        ) String message,
+        ) String message
 
-        @RequestHeader(
-            value = "Accept-Language", defaultValue = "en"
-        )
-        String language
     ) {
 
-        return helloWorldService.execute(message, language);
+        return helloWorldService.execute(message);
 
     }
 }
