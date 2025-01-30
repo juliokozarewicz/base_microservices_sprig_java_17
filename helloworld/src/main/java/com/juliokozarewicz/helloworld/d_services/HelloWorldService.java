@@ -1,5 +1,7 @@
 package com.juliokozarewicz.helloworld.d_services;
 
+import com.juliokozarewicz.helloworld.f_utils.ErrorHandler;
+import jdk.jfr.Event;
 import org.springframework.stereotype.Service;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -7,10 +9,6 @@ import java.util.Map;
 // locale
 import org.springframework.context.MessageSource;
 import java.util.Locale;
-
-// logger
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Service
 public class HelloWorldService {
@@ -27,6 +25,14 @@ public class HelloWorldService {
     ) {
 
         Locale locale = new Locale(language);
+
+        if ( true ) {
+            Map<String, Object> errorDetails = new LinkedHashMap<>();
+            errorDetails.put("customError", true);
+            errorDetails.put("errorCode", 404);
+            errorDetails.put("message", "*** Mensagem de erro2 ***");
+            throw new RuntimeException(errorDetails.toString());
+        }
 
         // response (json)
         Map<String, Object> response = new LinkedHashMap<>();
