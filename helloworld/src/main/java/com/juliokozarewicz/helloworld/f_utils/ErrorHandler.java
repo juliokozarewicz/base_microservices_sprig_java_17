@@ -50,7 +50,6 @@ public class ErrorHandler {
                 errorMap.put(KeyIten[0], KeyIten[1]);
             }
 
-            String customError = (String) errorMap.get("customError");
             String errorCode = (String) errorMap.get("errorCode");
             String errorMessageDetail = (String) errorMap.get("message");
 
