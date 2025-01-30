@@ -27,14 +27,6 @@ public class HelloWorldService {
         // language
         Locale locale = LocaleContextHolder.getLocale();
 
-        // ##### test error
-        if ( true ) {
-            Map<String, Object> errorDetails = new LinkedHashMap<>();
-            errorDetails.put("errorCode", 409);
-            errorDetails.put("message", "*** Mensagem de erro ***");
-            throw new RuntimeException(errorDetails.toString());
-        }
-
         // response (json)
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("statusCode", 200);

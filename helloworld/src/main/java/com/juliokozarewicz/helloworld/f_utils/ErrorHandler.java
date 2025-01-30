@@ -78,7 +78,7 @@ public class ErrorHandler {
             );
 
             // logs
-            logger.error(error.getMessage());
+            logger.error(e.getMessage());
 
             return ResponseEntity
             .status(500)
