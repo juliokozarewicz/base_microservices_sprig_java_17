@@ -4,7 +4,7 @@ import jakarta.validation.constraints.Size;
 
 public class HelloWorldValidation {
 
-    @Size(min=1, max=100, message="A mensagem ultrapassa o limite de caracteres.")
+    @Size(min=1, max=100, message="{many_characters}")
     private String message;
 
     // Getters e Setters
