@@ -56,6 +56,11 @@ public class ErrorHandler {
             Map<String, Object> errorResponse = new LinkedHashMap<>();
             errorResponse.put("status", "error");
             errorResponse.put("statusCode", Integer.parseInt(errorCode));
+            // field error
+            if  (errorMap.get("field") != null) {
+                String errorField = (String) errorMap.get("field");
+                errorResponse.put("field", errorField);
+            }
             errorResponse.put("message", errorMessageDetail);
 
             return ResponseEntity
