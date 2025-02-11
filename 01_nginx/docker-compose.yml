@@ -1,0 +1,9 @@
+services:
+  nginx:
+    volumes:
+      - ../03_accounts/media/public:/usr/share/nginx/html/public
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "${NGINX_PORT}:80"
