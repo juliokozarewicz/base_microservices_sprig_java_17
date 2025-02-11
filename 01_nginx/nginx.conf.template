@@ -19,7 +19,7 @@ http {
   server {
 
     listen 80;
-    server_name $PUBLIC_DOMAIN www.$PUBLIC_DOMAIN;
+    server_name $PRIVATE_DOMAIN www.$PRIVATE_DOMAIN;
 
     # size request limit
     client_max_body_size 10M;
@@ -109,9 +109,9 @@ http {
     # =================================================================
     # [ DOCUMENTATION ] /documentation
     location /documentation/swagger {
-      proxy_pass $PRIVATE_DOMAIN:$DOCUMENTATION_PORT;
+      proxy_pass http://$PRIVATE_DOMAIN:$DOCUMENTATION_PORT;
       proxy_set_header Host host;
-      proxy_set_header X-Real-IP remote_addr;
+      proxy_set_header X-Real-IP remot1e_addr;
       proxy_set_header X-Forwarded-For proxy_add_x_forwarded_for;
       proxy_set_header X-Forwarded-Proto scheme;
     }
@@ -121,7 +121,7 @@ http {
     # =================================================================
     # [ HELLO WORLD ] /helloworld/helloworld
     location /helloworld/helloworld {
-      proxy_pass $PRIVATE_DOMAIN:$HELLOWORLD_PORT;
+      proxy_pass http://$PRIVATE_DOMAIN:$HELLOWORLD_PORT;
       proxy_set_header Host host;
       proxy_set_header X-Real-IP remote_addr;
       proxy_set_header X-Forwarded-For proxy_add_x_forwarded_for;

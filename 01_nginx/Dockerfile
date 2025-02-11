@@ -1,4 +1,4 @@
-FROM node:latest
+FROM nginx:latest
 
 # Install gettext and Nginx
 RUN apt update && apt install -y gettext nginx
