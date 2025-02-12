@@ -20,6 +20,9 @@ public class HelloWorldService {
         this.messageSource = messageSource;
     }
 
+    // language
+    Locale locale = LocaleContextHolder.getLocale();
+
     public Map<String, Object> execute(
         String message
     ) {
