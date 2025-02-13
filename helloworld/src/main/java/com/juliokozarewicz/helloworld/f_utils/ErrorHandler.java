@@ -1,5 +1,6 @@
 package com.juliokozarewicz.helloworld.f_utils;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,12 +21,13 @@ import org.slf4j.LoggerFactory;
 @RestControllerAdvice
 public class ErrorHandler {
 
-    private final MessageSource messageSource;
-    private static final Logger logger = LoggerFactory.getLogger(ErrorHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(
+        ErrorHandler.class
+    );
 
-    public ErrorHandler(MessageSource messageSource) {
-        this.messageSource = messageSource;
-    }
+    // locale
+    @Autowired
+    private MessageSource messageSource;
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleAllExceptions(
